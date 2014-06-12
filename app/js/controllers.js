@@ -9,6 +9,23 @@ angular.module('myApp.controllers', [])
   		console.log(data);
   	})
   }])
-  .controller('MyCtrl2', ['$scope', function($scope) {
-
-  }]);
+  .controller('MyCtrl2', ['$scope', '$http', function($scope, $http) {
+  	
+  	$scope.creaUsuario = function(){
+  		$http.post('http://localhost:8080/pruebasMongo/user/createUser',
+  			{
+  				'lastName': $scope.lastName,
+  				'userName':$scope.userName,
+  				'name': $scope.name,
+  				'password': $scope.password,
+  				'email': $scope.email
+  			}
+  		).success(function(data){
+  			console.log(data);
+  			$scope.isOK = data.success
+  			if(!$scope.isOK)
+  				window.location.href('/view2');
+  			else
+  				console.log("No hago nada");
+  	})
+  }}]);

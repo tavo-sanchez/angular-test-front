@@ -1,5 +1,44 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<form ng-controller="MyCtrl2">
+	<div>
+		<label for="userName">
+			User Name		
+		</label>
+		<input type="text" name="userName" ng-model="userName"/>
+	</div>
+
+	<div>
+		<label>
+			Email		
+		</label>
+		<input type="text" name="email" ng-model="email"/>
+	</div>
+
+	<div>
+		<label for="name">
+			Name
+			
+		</label>
+		<input type="text" name="name" ng-model="name"/>
+
+	</div>
+
+	<div>
+		<label for="lastName">
+			Last Name
+			
+		</label>
+		<input type="text" name="lastName" ng-model="lastName"/>
+
+	</div>
+
+	<div>
+		<label for="password">
+			Password
+			
+		</label>
+		<input type="password" name="password" ng-model="password"/>
+
+	</div>
+
+	<input ng-click="creaUsuario();" type="submit" value="Crear"/> 
+</form>
